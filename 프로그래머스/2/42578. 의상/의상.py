@@ -2,11 +2,11 @@ def solution(clothes):
     answer = 1
     hash_map = {}
     
-    for clothe in clothes:
-        if clothe[1] in hash_map:
-            hash_map[clothe[1]] = [*hash_map[clothe[1]], clothe[0]]
+    for  clothe, type in clothes:
+        if type in hash_map:
+            hash_map[type] = [*hash_map[type], clothe]
         else :
-            hash_map[clothe[1]] = [clothe[0]]
+            hash_map[type] = [clothe]
         
     for key, value in hash_map.items():
         answer *= (len(value) + 1)      
