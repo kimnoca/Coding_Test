@@ -5,14 +5,12 @@ class Solution {
         int answer = 0;
         HashMap<String, Integer> score = new HashMap<>();
         HashMap<String, HashMap<String, Integer>> map = new HashMap<>();
-        
+        HashMap<String, Integer> result = new HashMap<>();
      
         for (String friend : friends) {
             score.put(friend, 0);
-        }
-                    
-        for (String friend : friends) {
             map.put(friend, new HashMap<>());
+            result.put(friend, 0);
         }
         
         for (String gift : gifts) {
@@ -21,29 +19,17 @@ class Solution {
             String to = tmp[1];
             
             HashMap<String, Integer> tempMap = map.get(from);
-            
             int count = tempMap.getOrDefault(to, 0);
             tempMap.put(to, ++count);
-            
-            map.put(from, tempMap);           
-            
-        }
-                
-        for(String gift : gifts) {
-            String[] tmp = gift.split(" ");
-            String from  = tmp[0];
-            String to = tmp[1];
+            map.put(from, tempMap);       
+                        
             int fromScore = score.get(from);
             int toScore = score.get(to);
             score.put(from, ++fromScore);
             score.put(to, --toScore);
+            
         }
-        
-        HashMap<String, Integer> result = new HashMap<>();
-        
-        for (String s : friends) {
-            result.put(s, 0);
-        }
+
         
         for (String from : friends) {
             for (String to : friends) {
