@@ -19,15 +19,16 @@ public class Main {
 
         Collections.sort(arrayList);
 
-        int answer = 0;
+        int sum = 0;
 
         for (int i = 0; i < n; i++) {
-            int curr = arrayList.get(i);
-            int sum = 0;
-            for (int j = i + 1; j < n; j++) {
-                sum += arrayList.get(j);
-            }
-            answer += (curr * sum);
+            sum += arrayList.get(i);
+        }
+        long answer = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum = sum - arrayList.get(i);
+            answer += sum * arrayList.get(i);
         }
 
         System.out.println(answer);
