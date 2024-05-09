@@ -1,13 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.security.cert.PolicyQualifierInfo;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -24,11 +19,11 @@ public class Main {
             arr = arr.replace("[", "");
             arr = arr.replace("]", "");
 
-            String[] arrs = arr.split(",");
+            String[] numbers = arr.split(",");
 
             Deque<Integer> queue = new ArrayDeque<>();
 
-            for (String s : arrs) {
+            for (String s : numbers) {
                 if (!s.equals("")) {
                     queue.add(Integer.parseInt(s));
                 }
@@ -52,13 +47,15 @@ public class Main {
                 }
             }
             if (isError) {
-                sb.append("error\n");
+                sb.append("error").append("\n");
                 continue;
             }
+
             if (queue.isEmpty()) {
                 sb.append("[").append("]").append("\n");
                 continue;
             }
+
             sb.append("[");
             if (isReversed) {
                 sb.append(queue.pollLast());
