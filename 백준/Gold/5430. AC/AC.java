@@ -59,14 +59,13 @@ public class Main {
                 sb.append("[").append("]").append("\n");
                 continue;
             }
+            sb.append("[");
             if (isReversed) {
-                sb.append("[");
                 sb.append(queue.pollLast());
                 while (!queue.isEmpty()) {
                     sb.append(",").append(queue.pollLast());
                 }
             } else {
-                sb.append("[");
                 sb.append(queue.pollFirst());
                 while (!queue.isEmpty()) {
                     sb.append(",").append(queue.pollFirst());
