@@ -29,12 +29,12 @@ public class Main {
             }
 
             if ((now[0] * 10 + 1) <= b && !visited[Integer.parseInt(String.valueOf(now[0] * 10 + 1))]) {
-                visited[Integer.parseInt(String.valueOf(now[0] * 10 + 1))] = true;
+//                visited[Integer.parseInt(String.valueOf(now[0] * 10 + 1))] = true;
                 queue.add(new long[]{now[0] * 10 + 1, now[1] + 1});
             }
 
             if ((now[0] * 2) <= b && !visited[Integer.parseInt(String.valueOf(now[0] * 2))]) {
-                visited[Integer.parseInt(String.valueOf(now[0] * 2))] = true;
+//                visited[Integer.parseInt(String.valueOf(now[0] * 2))] = true;
                 queue.add(new long[]{now[0] * 2, now[1] + 1});
             }
 
