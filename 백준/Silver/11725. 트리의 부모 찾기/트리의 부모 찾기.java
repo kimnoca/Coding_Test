@@ -40,6 +40,8 @@ public class Main {
             int start = now[0];
             int end = now[1];
 
+            answers[end] = start;
+
             for (Integer i : map.get(end)) {
                 if (!visited[i]) {
                     queue.add(new int[]{end, i});
@@ -47,9 +49,6 @@ public class Main {
                 }
             }
 
-            if (visited[start]) {
-                answers[end] = start;
-            }
         }
 
         for (int i = 2; i <= n; i++) {
