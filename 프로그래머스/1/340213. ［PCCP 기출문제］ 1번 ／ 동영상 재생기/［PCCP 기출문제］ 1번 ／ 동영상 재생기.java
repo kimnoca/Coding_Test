@@ -13,7 +13,6 @@ class Solution {
             }
             if (command.equals("next")) {
                 posSec += 10;
-
                 if (posSec >= lenSec) {
                     posSec = lenSec;
                 }
@@ -23,11 +22,11 @@ class Solution {
                     posSec = 0;
                 }
             }
+            
             if (opStartSec <= posSec && posSec <= opEndSec) {
                 posSec = opEndSec;
             }
         }
-        System.out.println(posSec);
         
         return secToMin(posSec);
     }
@@ -35,23 +34,10 @@ class Solution {
         String[] split = min.split(":");
         return Integer.parseInt(split[0]) * 60 + Integer.parseInt(split[1]);  
     }
+    
     public String secToMin(int inputSec) {
-        String minString = "";
-        String secString = "";
-        
         int min  = inputSec / 60;
-        if (min < 10) {
-            minString = "0" + String.valueOf(min);
-        } else {
-            minString = String.valueOf(min);
-        }
         int sec = inputSec % 60;
-        if (sec < 10) {
-            secString = "0" + String.valueOf(sec);
-        } else {
-            secString = String.valueOf(sec);
-        }
-        
-        return minString + ":" + secString;
+        return String.format("%02d", min) + ":" + String.format("%02d", sec);
     }
 }
