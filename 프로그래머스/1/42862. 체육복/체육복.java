@@ -15,23 +15,16 @@ class Solution {
         
         for (int i : reserve) {
             if (!lostSet.contains(i)) {
-                 set.add(i);
+                set.add(i);
             } else {
                 answer++;
                 lostSet.remove(i);
             }
         }
         
+        // Arrays.sort(lost);
         
-        Arrays.sort(lost);
-        
-        for (int i : lostSet) {
-            if (set.contains(i)) {
-                answer++;
-                set.remove(i);
-                continue;
-            }
-            
+        for (int i : lostSet) {    
             if (set.contains(i- 1)) {
                 answer ++;
                 set.remove(i - 1);
