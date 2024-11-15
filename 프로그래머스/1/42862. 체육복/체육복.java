@@ -22,8 +22,6 @@ class Solution {
             }
         }
         
-        // Arrays.sort(lost);
-        
         for (int i : lostSet) {    
             if (set.contains(i- 1)) {
                 answer ++;
