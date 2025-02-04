@@ -4,7 +4,10 @@ class Solution {
     public String solution(String s) {
         String answer = "";
  	    String[] split = s.split(" ");
-		Object[] array = Arrays.stream(split).map(Integer::parseInt).toArray();
+        
+		Integer[] array = Arrays.stream(split)
+            .map(Integer::parseInt)
+            .toArray(Integer[]::new);
         
         Arrays.sort(array);
         
