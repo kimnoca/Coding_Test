@@ -10,8 +10,6 @@ class Solution {
             wantMap.put(want[i], number[i]);
         }
         
-        
-        
         for (int i = 0; i <= discount.length - 10; i++) {
             HashMap<String, Integer> buyMap = new HashMap();
             for (int k = i; k < i + 10; k++) {
@@ -26,8 +24,6 @@ class Solution {
                     buyItemCount ++;
                 }
             }
-            
-            // System.out.println(buyItemCount);
             
             if (buyItemCount == want.length) {
                 answer ++;
