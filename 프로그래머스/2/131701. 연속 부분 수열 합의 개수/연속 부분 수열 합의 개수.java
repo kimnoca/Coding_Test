@@ -13,18 +13,12 @@ class Solution {
             for (int k = 0; k < elements.length; k ++) {
                  dfs(elements[k], i, 1, elements, k);
             }
-            // System.out.println(result + ":" + i);
         }
-        
-        
-        // System.out.println(result);
-//         
         
         return result.size();
     }
     
     public void dfs(int n, int size, int depth, int[] elements, int start) {
-        
         
         if (size == depth) {
             result.add(n);
