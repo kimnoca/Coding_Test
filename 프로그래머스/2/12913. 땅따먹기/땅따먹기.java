@@ -11,20 +11,17 @@ class Solution {
         }
         
         for (int i = 1; i < land.length; i++) {
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < SIZE; k++) {
                 int max = 0;
-                for (int j = 0; j < 4; j++) {
+                for (int j = 0; j < SIZE; j++) {
                     if(k == j) {
                         continue;
                     }
-                    max = Math.max(result[i -1][j % 4], max);
+                    max = Math.max(result[i -1][j % SIZE], max);
                     result[i][k] = max + land[i][k]; 
                 }
             }
         }
-        // 1 2 3 4
-        // 10 11 12 11
-        // 16 15 13 13
         
         return answer(result, land.length);
     }
